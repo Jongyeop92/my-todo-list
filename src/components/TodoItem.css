@@ -1,0 +1,13 @@
+.remove {
+    color: red;
+    cursor: pointer;
+}
+
+.text {
+    cursor: pointer;
+}
+
+.done > .text {
+    text-decoration-line: line-through;
+    color: #7f7f7f;
+}
