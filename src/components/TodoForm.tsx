@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Todos } from '../type/Todo';
+import { Todos, Todo } from '../type/Todo';
 
-function TodoForm({ todos, setTodos }: {todos: Todos, setTodos: React.Dispatch<React.SetStateAction<Todos>>}) {
+function TodoForm({ todos, handleAdd }: {todos: Todos, handleAdd: (todo: Todo) => void}) {
     const [text, setText] = useState('');
 
     const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -10,11 +10,11 @@ function TodoForm({ todos, setTodos }: {todos: Todos, setTodos: React.Dispatch<R
 
     const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        setTodos(todos.concat({
+        handleAdd({
             id: Math.max(0, ...todos.map(todo => todo.id)) + 1,
             text,
             done: false
-        }));
+        });
         setText('');
     };
 
