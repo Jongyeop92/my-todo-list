@@ -3,7 +3,6 @@ import { Todo } from '../type';
 import './TodoItem.css';
 
 type TodoItemProps = {
-    key: number,
     todo: Todo,
     handleToggle: (id: number) => void,
     handleRemove: (id: number) => void
