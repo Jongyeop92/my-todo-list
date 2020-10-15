@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
-import { Todos, Todo } from '../type/Todo';
+import { Todos, Todo } from '../type';
 
-function TodoForm({ todos, handleAdd }: {todos: Todos, handleAdd: (todo: Todo) => void}) {
+type TodoFormProps = {
+    todos: Todos,
+    handleAdd: (todo: Todo) => void
+};
+
+function TodoForm({ todos, handleAdd }: TodoFormProps) {
     const [text, setText] = useState('');
 
     const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
