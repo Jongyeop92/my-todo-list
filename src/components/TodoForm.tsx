@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Todos, Todo } from '../type';
+import { Todos, Todo } from 'type';
 
 type TodoFormProps = {
     todos: Todos,
